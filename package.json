@@ -1,0 +1,77 @@
+{
+  "name": "redux",
+  "version": "2.0.0",
+  "description": "HosptialRun mono-repo",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/HospitalRun/hospitalrun.git"
+  },
+  "author": "Maksim Sink <maksim@sinik.it>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "commit": "npx git-cz",
+    "commit-components": "yarn workspace @hospitalrun/components commit",
+    "commit-cli": "yarn workspace @hospitalrun/cli commit",
+    "commit-core": "yarn workspace @hospitalrun/core commit",
+    "commit-frontend": "yarn workspace @hospitalrun/frontend commit",
+    "commit-server": "yarn workspace @hospitalrun/server commit",
+    "update": "yarn upgrade-interactive --latest"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "~8.2.0",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/core": "~8.2.0",
+    "@commitlint/prompt": "^8.3.5",
+    "commitizen": "~4.0.3",
+    "commitlint-config-cz": "^0.13.0",
+    "cross-env": "~6.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "dateformat": "~3.0.3",
+    "husky": "~3.1.0",
+    "@babel/plugin-proposal-private-property-in-object" : "^7.21.11"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/husky",
+      "**/husky/**",
+      "**/jest",
+      "**/jest/**",
+      "**/tsdx",
+      "**/tsdx/**",
+      "**/cz-conventional-changelog",
+      "**/cz-conventional-changelog/**",
+      "**/tap",
+      "**/tap/**",
+      "**/tap-mocha-reporter",
+      "**/tap-mocha-reporter/**",
+      "**/eslint-plugin-prettier",
+      "**/eslint-plugin-prettier/**",
+      "**/eslint-config-prettier",
+      "**/eslint-config-prettier/**",
+      "**/webpack",
+      "**/webpack/**"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/HospitalRun/hospitalrun/issues"
+  },
+  "homepage": "https://github.com/HospitalRun/hospitalrun#readme",
+  "main": "commitlint.config.js",
+  "directories": {
+    "doc": "docs"
+  }
+}

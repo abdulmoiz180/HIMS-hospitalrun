@@ -1,0 +1,34 @@
+{
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "esnext",
+    "outDir": "dist",
+    "typeRoots": [
+      "./node_modules/@types",
+    ],
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "newLine": "lf",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@hospitalrun/components": ["src/"]
+    }
+  }
+}
+
+
+

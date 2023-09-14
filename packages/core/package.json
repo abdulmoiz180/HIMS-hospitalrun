@@ -1,0 +1,61 @@
+{
+  "name": "@hospitalrun/core",
+  "version": "1.0.0",
+  "description": "Shared Interfaces and Models",
+  "main": "./dist/index.js",
+  "types": "./typings/index.d.ts",
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "scripts": {
+    "commit": "npx git-cz",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HospitalRun/hospitalrun-core.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HospitalRun/hospitalrun-core/issues"
+  },
+  "homepage": "https://github.com/HospitalRun/hospitalrun-core#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/core": "~8.3.3",
+    "@commitlint/prompt": "^8.2.0",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/commit-analyzer": "^6.3.3",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^5.5.5",
+    "@semantic-release/release-notes-generator": "^9.0.0",
+    "@types/pouchdb": "~6.4.0",
+    "commitizen": "^4.0.3",
+    "commitlint-config-cz": "^0.13.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "dateformat": "~3.0.3",
+    "husky": "~4.2.0",
+    "semantic-release": "^17.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm test"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "fastify": "~4.21.0",
+    "pouchdb": "~7.2.1"
+  }
+}
